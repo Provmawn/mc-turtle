@@ -1,4 +1,4 @@
-local dist = 50
+local dist = 10
 
 
 function mineStrip()
@@ -98,6 +98,9 @@ function unloadToChest()
     turtle.turnLeft()
     mineN(offset)
     unload()
+end
+
+function returnToStrip()
     turnAround()
     offset = offset + 2
     mineN(offset)
@@ -116,4 +119,5 @@ do
     mineStrip()
     unloadToChest()
     refuel()
+    returnToStrip()
 end
