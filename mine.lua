@@ -94,46 +94,25 @@ end
 
 local offset = 0
 
+function goToChest()
+    turtle.turnLeft()
+    mineN(offset)
+    unload()
+    turnAround()
+    offset = offset + 2
+    mineN(offset)
+    turtle.turnLeft()
+
+end
+
+mineStrip() 
+unload()
+goRight()
+goForward()
+offset = offset + 2
+turtle.turnLeft()
 while(hasBagSpace())
 do 
-    mineStrip() 
-
-    unload()
-
-    goRight()
-    goForward()
-    offset = offset + 2
-    turtle.turnLeft()
-
-    mineStrip() 
-
-    turtle.turnLeft()
-
-    mineN(offset)
-
-    unload()
-
-    turnAround()
-
-    offset = offset + 2
-
-    mineN(offset)
-
-    turtle.turnLeft()
-
     mineStrip()
-
-    turtle.turnLeft()
-
-    mineN(offset)
-
-    unload()
-
-    turnAround()
-
-    offset = offset + 2
-
-    mineN(offset)
-
-    turtle.turnLeft()
+    goToChest()
 end
