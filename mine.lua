@@ -1,9 +1,5 @@
 local dist = 50
 
-while(hasBagSpace())
-do 
-
-end
 
 function mineStrip()
     mineN(dist)
@@ -84,5 +80,10 @@ function hasBagSpace()
 end
 
 function unload() 
-    
+    print("unloading...")
+end
+
+while(hasBagSpace())
+do 
+    mineStrip() 
 end
