@@ -77,7 +77,7 @@ end
 
 function hasBagSpace()
     for i=1,16 do
-        if turtle.getItemSpace(i) == 0
+        if turtle.getItemSpace(i) == 64
         then
             return true
         end
@@ -94,7 +94,7 @@ end
 
 local offset = 0
 
-function goToChest()
+function unloadToChest()
     turtle.turnLeft()
     mineN(offset)
     unload()
@@ -102,17 +102,18 @@ function goToChest()
     offset = offset + 2
     mineN(offset)
     turtle.turnLeft()
-
 end
 
-mineStrip() 
-unload()
-goRight()
-goForward()
-offset = offset + 2
-turtle.turnLeft()
+function refuel()
+    turtle.select(1)
+    turtle.suck()
+    turtle.refuel()
+    print(turtle.getFuelLevel())
+end
+
 while(hasBagSpace())
 do 
     mineStrip()
-    goToChest()
+    unloadToChest()
+    refuel()
 end
