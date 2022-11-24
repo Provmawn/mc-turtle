@@ -24,7 +24,13 @@ function mineStrip()
     mineN(dist)
     goRight()
     goRight()
-    goUp()
+    goDown()
+    goDown()
+end
+
+function turnAround()
+    turtle.turnRight()
+    turtle.turnRight()
 end
 
 function goForward()
@@ -80,10 +86,51 @@ function hasBagSpace()
 end
 
 function unload() 
-    print("unloading...")
+
 end
+
+local offset = 0
 
 while(hasBagSpace())
 do 
     mineStrip() 
+
+    unload()
+
+    goRight()
+    goForward()
+    offset = offset + 2
+    turtle.turnLeft()
+
+    mineStrip() 
+
+    turtle.turnLeft()
+
+    mineN(offset)
+
+    unload()
+
+    turnAround()
+
+    offset = offset + 2
+
+    mineN(offset)
+
+    turtle.turnLeft()
+
+    mineStrip()
+
+    turtle.turnLeft()
+
+    mineN(offset)
+
+    unload()
+
+    turnAround()
+
+    offset = offset + 2
+
+    mineN(offset)
+
+    turtle.turnLeft()
 end
