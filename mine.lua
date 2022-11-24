@@ -88,7 +88,7 @@ end
 function unload() 
     for i = 16,1,-1 do
         turtle.select(i)
-        turtle.drop()
+        turtle.dropDown()
     end
 end
 
