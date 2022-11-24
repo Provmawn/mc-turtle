@@ -38,7 +38,8 @@ function goForward()
     then
         turtle.dig()
     end
-        turtle.forward()
+    turtle.attack()
+    turtle.forward()
 end
 
 function goUp()
@@ -46,6 +47,7 @@ function goUp()
     then
         turtle.digUp()
     end
+    turtle.attackUp()
     turtle.up()
 end
 
@@ -54,6 +56,7 @@ function goDown()
     then
         turtle.digDown()
     end
+    turtle.attackDown()
     turtle.down()
 end
 
