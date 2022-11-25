@@ -43,8 +43,8 @@ function goForward()
 end
 
 function goUp()
-    if turtle.detectUp()
-    then
+    while turtle.detectUp()
+    do
         turtle.digUp()
     end
     turtle.attackUp()
@@ -52,8 +52,8 @@ function goUp()
 end
 
 function goDown()
-    if turtle.detectDown()
-    then
+    while turtle.detectDown()
+    do
         turtle.digDown()
     end
     turtle.attackDown()
