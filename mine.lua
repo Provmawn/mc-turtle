@@ -34,8 +34,8 @@ function turnAround()
 end
 
 function goForward()
-    if turtle.detect()
-    then
+    while turtle.detect()
+    do
         turtle.dig()
     end
     turtle.attack()
